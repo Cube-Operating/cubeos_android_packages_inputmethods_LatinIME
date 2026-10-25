@@ -21,19 +21,42 @@
 <merge
     xmlns:latin="http://schemas.android.com/apk/res/com.android.inputmethod.latin"
 >
+    <!-- CubeOS: iOS 26's bottom row, measured: 123 (a quarter), space (half), return (a
+         quarter); no comma or period keys (they're on the 123 page, as on iPhone). An emoji or
+         language key, when the user has one, sits between 123 and space. -->
     <Row
         latin:keyWidth="10%p"
     >
         <Key
             latin:keyStyle="toSymbolKeyStyle"
-            latin:keyWidth="15%p" />
-        <include
-            latin:keyboardLayout="@xml/key_comma" />
-        <include
-            latin:keyXPos="25%p"
-            latin:keyboardLayout="@xml/key_space_5kw" />
-        <include
-            latin:keyboardLayout="@xml/key_period" />
+            latin:keyWidth="25%p" />
+        <switch>
+            <case
+                latin:emojiKeyEnabled="true"
+            >
+                <Key
+                    latin:keyStyle="emojiKeyStyle"
+                    latin:keyWidth="10%p" />
+                <Key
+                    latin:keyStyle="spaceKeyStyle"
+                    latin:keyWidth="40%p" />
+            </case>
+            <case
+                latin:languageSwitchKeyEnabled="true"
+            >
+                <Key
+                    latin:keyStyle="languageSwitchKeyStyle"
+                    latin:keyWidth="10%p" />
+                <Key
+                    latin:keyStyle="spaceKeyStyle"
+                    latin:keyWidth="40%p" />
+            </case>
+            <default>
+                <Key
+                    latin:keyStyle="spaceKeyStyle"
+                    latin:keyWidth="50%p" />
+            </default>
+        </switch>
         <Key
             latin:keyStyle="enterKeyStyle"
             latin:keyWidth="fillRight" />

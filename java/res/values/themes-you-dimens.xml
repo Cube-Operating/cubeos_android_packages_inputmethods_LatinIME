@@ -4,8 +4,12 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <dimen name="keyboard_key_corner_radius_you">8dp</dimen>
-    <dimen name="keyboard_key_action_corner_radius_you">120dp</dimen>
+    <!-- CubeOS: iOS 26 key corners (8 pt on a 36 pt key). Stock: 8dp / 120dp. -->
+    <dimen name="keyboard_key_corner_radius_you">7dp</dimen>
+    <dimen name="keyboard_key_action_corner_radius_you">7dp</dimen>
+    <!-- CubeOS: the keyboard is a sheet with rounded top corners and a glass rim. -->
+    <dimen name="keyboard_panel_corner_radius_you">22dp</dimen>
+    <dimen name="keyboard_panel_rim_you">1dp</dimen>
     <dimen name="keyboard_key_popup_action_size">40dp</dimen>
     <dimen name="config_gesture_floating_preview_round_radius_you">8dp</dimen>
 </resources>

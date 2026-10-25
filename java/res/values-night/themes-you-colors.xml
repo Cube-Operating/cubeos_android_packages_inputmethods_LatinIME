@@ -4,28 +4,31 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <color name="keyboard_background_you">@android:color/system_neutral1_900</color>
+    <!-- CubeOS: iOS 26 keyboard, measured (dark): one grey for every key including shift, 123
+         and return, no hint characters, a #1B1A1C sheet with a lighter rim. -->
+    <color name="keyboard_panel_rim_you">#FF48474B</color>
+    <color name="keyboard_background_you">#FF1B1A1C</color>
     <!-- Keys -->
-    <color name="keyboard_key_normal_color_you">@android:color/system_neutral1_800</color>
-    <color name="keyboard_key_pressed_color_you">@android:color/system_neutral1_900</color>
-    <color name="keyboard_key_text_color_you">@android:color/system_neutral1_50</color>
-    <color name="keyboard_key_functional_normal_color_you">@android:color/system_neutral1_700</color>
-    <color name="keyboard_key_functional_pressed_color_you">@android:color/system_neutral2_300</color>
-    <color name="keyboard_key_functional_text_color_you">@android:color/system_neutral1_50</color>
-    <color name="keyboard_key_action_normal_color_you">@android:color/system_accent1_400</color>
-    <color name="keyboard_key_action_pressed_color_you">@android:color/system_accent1_600</color>
-    <color name="shift_normal_color_you">@android:color/system_neutral1_50</color>
-    <color name="shift_locked_color_you">@android:color/system_neutral1_50</color>
-    <color name="icon_color_you">@android:color/system_neutral1_50</color>
-    <color name="key_hint_letter_color_you">@android:color/system_neutral1_400</color>
+    <color name="keyboard_key_normal_color_you">#FF3F3E40</color>
+    <color name="keyboard_key_pressed_color_you">#FF5C5B5E</color>
+    <color name="keyboard_key_text_color_you">#FFF5F5F7</color>
+    <color name="keyboard_key_functional_normal_color_you">#FF3F3E40</color>
+    <color name="keyboard_key_functional_pressed_color_you">#FF5C5B5E</color>
+    <color name="keyboard_key_functional_text_color_you">#FFF5F5F7</color>
+    <color name="keyboard_key_action_normal_color_you">#FF3F3E40</color>
+    <color name="keyboard_key_action_pressed_color_you">#FF5C5B5E</color>
+    <color name="shift_normal_color_you">#FFF5F5F7</color>
+    <color name="shift_locked_color_you">#FFF5F5F7</color>
+    <color name="icon_color_you">#FFF5F5F7</color>
+    <color name="key_hint_letter_color_you">@android:color/transparent</color>
     <!-- Suggestion bar -->
-    <color name="typed_word_color_you">@android:color/system_neutral1_50</color>
-    <color name="auto_correct_color_you">@android:color/system_neutral1_50</color>
-    <color name="suggested_word_color_you">@android:color/system_neutral1_50</color>
+    <color name="typed_word_color_you">#FFF5F5F7</color>
+    <color name="auto_correct_color_you">#FFF5F5F7</color>
+    <color name="suggested_word_color_you">#FFF5F5F7</color>
     <!-- Gesture input -->
     <color name="gesture_trail_color_you">@android:color/system_accent1_300</color>
     <color name="gesture_floating_preview_text_color_you">@android:color/system_neutral1_50</color>
     <!-- Misc -->
     <color name="highlight_color_you">@android:color/system_accent1_500</color>
-    <color name="emoji_tab_page_indicator_background_you">@android:color/system_neutral1_900</color>
+    <color name="emoji_tab_page_indicator_background_you">#FF1B1A1C</color>
 </resources>

@@ -57,9 +57,11 @@ android_app {
 
     min_sdk_version: "30",
     target_sdk_version: "34",
-    sdk_version: "35",
+    // CubeOS: platform APIs for the glass keyboard's blur region (CubeKeyboardGlass).
+    platform_apis: true,
 
-    product_specific: true,
+    // CubeOS: system_ext (not product): platform APIs aren't allowed on product.
+    system_ext_specific: true,
 
     optimize: {
         proguard_flags_files: ["proguard.flags"],

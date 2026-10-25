@@ -114,7 +114,8 @@ filegroup {
 cc_library {
     name: "libjni_latinime",
     host_supported: true,
-    product_specific: true,
+    // CubeOS: on system_ext with LatinIME, which loads it (a system_ext app can't load product libs).
+    system_ext_specific: true,
 
     sdk_version: "14",
     cflags: [

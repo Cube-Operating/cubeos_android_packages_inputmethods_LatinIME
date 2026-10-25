@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 CubeOS
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- CubeOS keyboard sheet, after iOS 26's: rounded top corners and a hairline of light along
+     the top edge (the glass rim), over the panel colour. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/keyboard_panel_rim_you" />
+            <corners
+                android:topLeftRadius="@dimen/keyboard_panel_corner_radius_you"
+                android:topRightRadius="@dimen/keyboard_panel_corner_radius_you" />
+        </shape>
+    </item>
+    <item android:top="@dimen/keyboard_panel_rim_you">
+        <shape>
+            <solid android:color="@color/keyboard_background_you" />
+            <corners
+                android:topLeftRadius="@dimen/keyboard_panel_corner_radius_you"
+                android:topRightRadius="@dimen/keyboard_panel_corner_radius_you" />
+        </shape>
+    </item>
+</layer-list>

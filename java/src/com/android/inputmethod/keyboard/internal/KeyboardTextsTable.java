@@ -307,7 +307,7 @@ public final class KeyboardTextsTable {
         /* keyspec_symbols_9 */ "9",
         /* keyspec_symbols_0 */ "0",
         // Label for "switch to symbols" key.
-        /* keylabel_to_symbol */ "?123",
+        /* keylabel_to_symbol */ "123", // CubeOS: as on iPhone (stock "?123")
         /* additional_morekeys_symbols_1 ~ */
         EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
         /* ~ additional_morekeys_symbols_0 */

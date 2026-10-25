@@ -76,6 +76,7 @@ import com.android.inputmethod.keyboard.Keyboard;
 import com.android.inputmethod.keyboard.KeyboardActionListener;
 import com.android.inputmethod.keyboard.KeyboardId;
 import com.android.inputmethod.keyboard.KeyboardSwitcher;
+import com.android.inputmethod.keyboard.KeyboardTheme;
 import com.android.inputmethod.keyboard.MainKeyboardView;
 import com.android.inputmethod.latin.Suggest.OnGetSuggestedWordsCallback;
 import com.android.inputmethod.latin.SuggestedWords.SuggestedWordInfo;
@@ -865,6 +866,11 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         mSuggestionStripView = (SuggestionStripView)view.findViewById(R.id.suggestion_strip_view);
         if (hasSuggestionStripView()) {
             mSuggestionStripView.setListener(this, view);
+            // CubeOS: the iOS 26 glass keyboard sheet (the default "You" theme only).
+            if (KeyboardTheme.getKeyboardTheme(this).mThemeId == KeyboardTheme.THEME_ID_YOU) {
+                CubeKeyboardGlass.apply(view.findViewById(R.id.main_keyboard_frame),
+                        mSuggestionStripView, view.findViewById(R.id.keyboard_view));
+            }
         }
     }
 
@@ -2051,10 +2057,14 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
             return;
 
         if (BuildCompatUtils.EFFECTIVE_SDK_INT > Build.VERSION_CODES.R) {
-            Drawable bg = mInputView.findViewById(R.id.keyboard_view).getBackground();
+            View keys = mInputView.findViewById(R.id.keyboard_view);
+            Drawable bg = keys.getBackground();
             Window w = getWindow().getWindow();
             if (bg instanceof ColorDrawable) {
                 w.setNavigationBarColor(((ColorDrawable) bg).getColor());
+            } else if (CubeKeyboardGlass.isGlass(keys)) {
+                // CubeOS: under the glass sheet, the sheet's usual colour.
+                w.setNavigationBarColor(getColor(R.color.keyboard_background_you));
             }
 
             int nightModeFlags = mDisplayContext.getResources().getConfiguration().uiMode &
